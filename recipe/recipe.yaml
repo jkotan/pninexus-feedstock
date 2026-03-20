@@ -17,7 +17,7 @@ source:
     - adapt-type-tests-for-windows.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - if: win
       then:
