@@ -35,7 +35,7 @@
 
          ebias = dtype.ebias
 +        self.assertEqual(ebias, 16383)  # if not LINUX:
-+        self.assertEqual(16, sz)   #    dtype.size = 8
++        self.assertEqual(16, dtype.size)   #    dtype.size = 8
          sz = dtype.size
          self.assertTrue(dtype.ebias in [2 * sz * sz * sz - 1,
                                          4 * sz * sz * sz - 1])
