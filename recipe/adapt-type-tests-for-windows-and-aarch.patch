@@ -34,8 +34,8 @@
          dtype.norm = norm
 
          ebias = dtype.ebias
-+        if not LINUX:
-+            dtype.size = 8
++        self.assertEqual(ebias, 1023)  # if not LINUX:
++        self.assertEqual(8, sz)   #    dtype.size = 8
          sz = dtype.size
          self.assertTrue(dtype.ebias in [2 * sz * sz * sz - 1,
                                          4 * sz * sz * sz - 1])
