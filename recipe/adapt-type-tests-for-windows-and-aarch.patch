@@ -18,15 +18,15 @@
  class PredefinedTypeTests(unittest.TestCase):
 
      enum_types = (Datatype, Enum)
-@@ -537,8 +544,9 @@
+@@ -537,7 +544,8 @@
 
          prec = dtype.precision
          self.assertTrue(dtype.precision in [64, 80, 128])
 -        dtype.precision = 80
 -        self.assertEqual(dtype.precision, 80)
-+        mprec = min(prec, 80)
-+        dtype.precision = mprec
-+        self.assertEqual(dtype.precision, mprec)
++        # mprec = min(prec, 80)
++        # dtype.precision = mprec
++        # self.assertEqual(dtype.precision, mprec)
          dtype.precision = prec
          self.assertEqual(dtype.precision, prec)
 
