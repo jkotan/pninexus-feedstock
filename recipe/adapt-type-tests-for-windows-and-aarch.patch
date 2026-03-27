@@ -18,13 +18,13 @@
  class PredefinedTypeTests(unittest.TestCase):
 
      enum_types = (Datatype, Enum)
-@@ -537,7 +544,8 @@
+@@ -537,8 +544,9 @@
 
          prec = dtype.precision
          self.assertTrue(dtype.precision in [64, 80, 128])
 -        dtype.precision = 80
 -        self.assertEqual(dtype.precision, 80)
-+        # mprec = 64
++        # mprec = 80
 +        # dtype.precision = mprec
 +        # self.assertEqual(dtype.precision, mprec)
          dtype.precision = prec
@@ -34,8 +34,8 @@
          dtype.norm = norm
 
          ebias = dtype.ebias
-+        # if not LINUX:
-+        dtype.size = 8
++        if not LINUX:
++            dtype.size = 8
          sz = dtype.size
          self.assertTrue(dtype.ebias in [2 * sz * sz * sz - 1,
                                          4 * sz * sz * sz - 1])
